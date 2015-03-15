@@ -26,7 +26,7 @@ Example usage:
 
 Currently it's only a python cli script, might be turned into a basic website. 
 
-### Known limitations:
+### Known limitations
 
 If there is no flight the given day, then `my_price` is `None`, rather than showing the closest match. 
 
