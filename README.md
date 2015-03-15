@@ -21,8 +21,8 @@ Example usage:
      'my_price': 16061,
      'price_count': 106}
     
-   Good price!
-   $
+    Good price!
+    $
 
 Currently it's only a python cli script, might be turned into a basic website. 
 
