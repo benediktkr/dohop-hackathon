@@ -34,20 +34,21 @@ Example: python dohop.py KEF HAM 2015-12-26
         
 ## -- Interaction with Dohop api
 
-def get_avg_range(frm, to, day, stay=None, date_diff=180):
+def get_avg_range(from_airport, arrival_airports, day, stay=None, date_diff=180):
+    print "date_diff", date_diff
     day_date = date(*map(int, day.split('-')))
     max_day = day_date + timedelta(date_diff)
     min_day = day_date - timedelta(date_diff)
     if type(stay) == list:
         stay = ",".join(return_after)
-    if type(to) == list:
-        to = ",".join(to)
+    if type(arrival_airports) == list:
+        arrival_airports = ",".join(arrival_airports)
 
     prices = dict()
     
     for d in date_range(min_day, max_day):
         isodate = d.isoformat()
-        res = get_for_day(frm, to, isodate, stay)
+        res = get_for_day(from_airport, arrival_airports, isodate, stay)
         try:
             price = min([get_isk_price(a) for a in res['fares']])
             prices[isodate] = price
@@ -71,13 +72,13 @@ def get_avg_range(frm, to, day, stay=None, date_diff=180):
             'price_count': len(prices),
             'my_price': prices[day] if day in prices else None}
 
-def get_for_day(frm, to, day, stay=None):
+def get_for_day(from_airport, arrival_airports, day, stay=None):
     include_split = bool(stay)
 
     request = {'currency': CURRENCY,
                'fare-format': 'full',
-               'from_airport': frm,
-               'arrival_airports': to,
+               'from_airport': from_airport,
+               'arrival_airports': arrival_airports,
                #'wd': '12345', # monday = 1
                'date_from': day,
                'date_to': day,

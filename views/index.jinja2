@@ -1,0 +1,43 @@
+{% extends "base.jinja2" %}
+
+{% block content %}
+
+<h1 class="cover-heading">Is it a good price?</h1>
+<p class="lead">Use grade-school math to see if the price is any good.</p>
+
+
+<div class="container">
+  <form class="form-inline" id="myform">
+    <div class="row">
+      <div class="form-group col-lg-2">
+        <label class="sr-only" for="from_airport">From</label>
+        <input type="text" class="form-control" name="from_airport" placeholder="KEF"  maxlength=3 width=3>
+      </div>
+      <div class="form-group col-lg-4">
+        <label class="sr-only" for="arrival_airports">Arrival</label>
+        <input type="text" class="form-control" name="arrival_airports" placeholder="HAM,LBC,XFW">
+      </div>
+      <div class="form-group col-lg-4">
+        <label class="sr-only" for="day">Date</label>
+        <input type="date" class="form-control" name="day" placeholder="2015-06-15">
+      </div>
+      <div class="form-group col-lg-2">
+        <button type="submit" class="btn btn-success" id="button">Search</button> 
+      </div>
+    </div>
+  </form>
+  <div class="row" id="spinner" style="display:none;">
+    <img src="/static/spinner.gif">
+  </div>
+  <div class="row" id="result" style="display:none;" class="alert alart-success col-lg-2" role="alert">
+    <h2><span id="result_text"></h2>
+    <p id="myday" style="display:none;">The price to travel on your desired day is <b><span id="result_price"></span></b> ISK</p>
+    <p id="cheap" style="display:none;">Cheapest day I found to travel was <span id="result_cheap"></span> for <b><span id="cheap_price"></span></b> ISK</p>
+    <p id="exp" style="display:none;">Most expensive day found: <span id="result_exp"></span> for <b><span id="exp_price"></span></b> ISK</p>
+  </div>
+
+</div> <!-- /container -->
+
+
+
+{% endblock %}

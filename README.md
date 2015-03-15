@@ -30,6 +30,14 @@ Currently it's only a python cli script, might be turned into a basic website.
 
 If there is no flight the given day, then `my_price` is `None`, rather than showing the closest match. 
 
+The API talk should have been threaded with futures and promises (pershaps should have used Clojure)
+
+## Python module requirements
+
+ * `requests`
+ * `bottle` (included as `.py`)
+ * `jinja2`
+
 ## Limitations of the API
 
 It seems like the API doesn't include prices that are more than 7 months into the future. At the time of writing, Marc 2015, prices to Hamburg in December 2015 are unavailable in this API, but available on Dohop.com. 

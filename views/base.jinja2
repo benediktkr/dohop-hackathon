@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dohop average prices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	{% block css %}
+    <link media="screen" type="text/css" rel="stylesheet" href="/static/bootstrap.min.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="/static/cover.css">
+    {% endblock %}
+	{% block js %}
+    <script src="/static/jquery.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/index.js"></script>
+    {% endblock %}
+
+  </head>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Fare averages</h3>
+              {% block nav %}
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Go nowhere</a></li>
+                </ul>
+              </nav>
+              {% endblock %}
+            </div>
+          </div>
+
+          <div class="inner cover">
+            {% block content %}
+            {% endblock %}
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Made for <a href="http://hackathon.dohop.com">Dohop hackathon</a> 2015.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
+
