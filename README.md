@@ -24,7 +24,10 @@ Example usage:
     Good price!
     $
 
-Currently it's only a python cli script, might be turned into a basic website. 
+I also created a small website as a UI for this script. 
+
+![scrot](scrot.png)
+
 
 ### Known limitations
 
