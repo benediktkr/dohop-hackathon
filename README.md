@@ -6,7 +6,7 @@ Documentation here: http://www.dohop.com/hackathon/livestore-api.html
 
 ## My idea
 
-When booking a flight, I find it hard to quantify the price unless it is a route I fly often. http://www.dohop.com/hackathon/livestore-api.html
+When booking a flight, I find it hard to quantify the price unless it is a route I fly often. 
 
 Originally I wanted to use historic prices to quantify the given price, but this is not available through the API. My program searches for flights 30 days (adjustable) before and 30 days after the entered date, and uses this information to help the use quantify prices.  
 
