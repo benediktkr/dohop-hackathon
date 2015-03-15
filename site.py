@@ -38,7 +38,7 @@ def index():
 @post('/fares.json')
 def fares():
     data = dict(request.forms)
-    data['date_diff'] = 2
+    data['date_diff'] = 180
     print data
     #return get_avg_range(frm, to, day)
     return get_avg_range(**data)
